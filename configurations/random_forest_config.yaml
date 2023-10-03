@@ -1,0 +1,37 @@
+path_to_data_file: "./einkommen.train"
+
+# drop_columns: ["employment_type", "level_of_education", "ethnicity", "gender", "country_of_birth"]
+drop_columns: []
+impute_data: True # "True" or "False"
+scale_data: True # "True" or "False"
+val_split_size: 0.2
+
+imputation_configuration:
+    drop_nan: False
+    imputation_method: "mode"
+
+scaling_configuration:
+    # "column_name" :- "scaling strategy"
+    age: "log"
+    employment_type: "None"
+    weighting_factor: ["log", 10]
+    level_of_education: "None"
+    schooling_or_training_period: "z_score"
+    marital_status: "None"
+    employment_area: "None"
+    partnership: "None"
+    ethnicity: "None"
+    gender: "None"
+    gains_on_financial_assets: ["log", 10]
+    losses_on_financial_assets: ["log", 10]
+    weekly_working_time: "z_score"
+    country_of_birth: "None"
+
+model_type: "random_forest"
+
+hyperparameter_setting: 
+    n_estimators: 200
+    criterion: "entropy" # "gini", "entropy", "log_loss"
+    max_depth: 12
+    min_samples_split: 10
+    max_features: "log2" # "sqrt", "log2", "None"

@@ -1,0 +1,30 @@
+path_to_data_file: "./einkommen.train"
+
+drop_columns: []
+impute_data: True # "True" or "False"
+scale_data: True # "True" or "False"
+val_split_size: 0.1
+
+imputation_configuration:
+    drop_nan: False
+    imputation_method: "mode"
+
+scaling_configuration:
+    # "column_name" :- "scaling strategy"
+    age: "log"
+    employment_type: "one_hot"
+    weighting_factor: ["log", 10]
+    level_of_education: "one_hot"
+    schooling_or_training_period: "z_score"
+    marital_status: "one_hot"
+    employment_area: "one_hot"
+    partnership: "one_hot"
+    ethnicity: "one_hot"
+    gender: "None"
+    gains_on_financial_assets: ["log", 10]
+    losses_on_financial_assets: ["log", 10]
+    weekly_working_time: "z_score"
+    country_of_birth: "None"
+
+model_type: "neural_network"
+    
