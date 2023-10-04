@@ -17,5 +17,6 @@ A polling institute conducted interviews with 30,000 individuals to gather perso
 ├── plots/
 │   └── decision_tree.png
 ├── einkommen.train
+├── project01_income.pdf
 └── data_exploration_and_models.ipynb
 ```
